@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18/"
+     xml:base="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-18="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#hasHomeStadium -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#hasHomeStadium">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#city"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#stadium"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#hasPlayer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#hasPlayer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#player"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#isManagedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#isManagedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#manager"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#locatedInCity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#locatedInCity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#city"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#city -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#city"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#manager -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#manager">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#player -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#player">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#referee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#referee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#stadium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#stadium"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#team -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#team"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#Galatasaray -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#Galatasaray">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#team"/>
+        <untitled-ontology-18:hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#Rams_Park"/>
+        <untitled-ontology-18:hasPlayer rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#Victor_Osimhen"/>
+        <untitled-ontology-18:isManagedBy rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#Okan_Buruk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#Istanbul -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#Istanbul">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#city"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#Okan_Buruk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#Okan_Buruk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#manager"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#Rams_Park -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#Rams_Park">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#stadium"/>
+        <untitled-ontology-18:locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#Istanbul"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#Victor_Osimhen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#Victor_Osimhen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/3/untitled-ontology-18#player"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
