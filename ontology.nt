@@ -1,0 +1,1504 @@
+[ {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An OWL 2 ontology representing the Turkish Süper Lig professional football league. Includes all 19 current teams, players, managers, stadiums, cities, playing positions, matches and seasons. Developed in Protégé 5.x using the METHONTOLOGY methodology. Phase 2 — May 2026."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Süper Lig Football Knowledge Ontology"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig/2.0"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "2.0"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Abdullah_Avci",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Turkish"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Abdullah Avci"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Adis_Jahovic",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasJerseyNumber" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "9"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Macedonian"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#playsPosition" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Forward"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Adis Jahovic"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Alanyaspor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1948"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalya"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Alanyaspor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankara",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Ankara"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankara_Stad",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "19800"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankara"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Ankara Stadium"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankaragucu",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1910"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankara_Stad"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankara"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Ankaragucu"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalya",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Antalya"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalya_Stadium",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "32536"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalya"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Antalya Stadium"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalyaspor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1966"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalya_Stadium"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalya"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Antalyaspor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ataturk_Olympic_Stadium",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "76092"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Ataturk Olympic Stadium"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Basaksehir_FK",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1990"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ataturk_Olympic_Stadium"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#isManagedBy" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ismail_Kartal"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Basaksehir FK"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Besiktas",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1903"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Tupras_Stadium"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasPlayer" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rafa_Silva"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#isManagedBy" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Serdar_Topraktepe"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Besiktas"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Bursa",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Bursa"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Bursaspor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1963"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Timsah_Arena"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#isManagedBy" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Sergen_Yalcin"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Bursa"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Bursaspor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Caykur_Didi_Stadium",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "15600"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rize"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Caykur Didi Stadium"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Caykur_Rizespor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1953"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Caykur_Didi_Stadium"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rize"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Caykur Rizespor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#City",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Turkish city in which one or more Süper Lig teams or stadiums are located."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "City"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Defender",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Defender"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dominic_Tedesco",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "German"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Dominic Tedesco"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dries_Mertens",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasJerseyNumber" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "14"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Belgian"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#playsPosition" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Forward"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Dries Mertens"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dusan_Tadic",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasJerseyNumber" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "10"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Serbian"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#playsPosition" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Midfielder"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Dusan Tadic"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Eyupspor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1954"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Eyupspor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Fenerbahce",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1907"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Sukru_Saracoglu_Stadium"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasPlayer" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dusan_Tadic"
+  }, {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Mauro_Icardi"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#isManagedBy" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dominic_Tedesco"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Fenerbahce"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Forward",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Forward"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Galatasaray",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1905"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rams_Park"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasPlayer" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dries_Mertens"
+  }, {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kerem_Akturkoglu"
+  }, {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Victor_Osimhen"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#isManagedBy" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Okan_Buruk"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Galatasaray"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Gaziantep",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Gaziantep"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Gaziantep_FK",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1988"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kalyon_Gaziantep_Stadium"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Gaziantep"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Gaziantep FK"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Goalkeeper",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Goalkeeper"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Goztepe",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1925"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Izmir"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Goztepe"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hakan_Kutlu",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Turkish"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Hakan Kutlu"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hatay",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Hatay"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hatayspor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1967"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Yeni_Hatay_Stadium"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hatay"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Hatayspor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ismail_Kartal",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Turkish"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Ismail Kartal"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Istanbul"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Izmir",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Izmir"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kadir_Has_Stadium",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "32864"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kayseri"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Kadir Has Stadium"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kalyon_Gaziantep_Stadium",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "35336"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Gaziantep"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Kalyon Gaziantep Stadium"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kasimpasa",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1921"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Kasimpasa"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kayseri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Kayseri"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kayserispor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1966"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kadir_Has_Stadium"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kayseri"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Kayserispor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kerem_Akturkoglu",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasJerseyNumber" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "77"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Turkish"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#playsPosition" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Midfielder"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Kerem Akturkoglu"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konya",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Konya"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konya_Buyuksehir_Stadium",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "42512"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konya"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Konya Buyuksehir Stadium"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konyaspor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1922"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konya_Buyuksehir_Stadium"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasPlayer" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Adis_Jahovic"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#isManagedBy" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hakan_Kutlu"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konya"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Konyaspor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The head coach or technical director responsible for managing a Süper Lig team."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Manager"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Person"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An individual competitive fixture between two Süper Lig teams. [Added v2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Match"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match_GS_FB_2025",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#awayTeam" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Fenerbahce"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#homeTeam" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Galatasaray"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#partOfSeason" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Superlig_Season_2025_26"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#playedAt" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rams_Park"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Galatasaray vs Fenerbahce 2025"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Mauro_Icardi",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasJerseyNumber" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "9"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Argentine"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#playsPosition" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Forward"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Mauro Icardi"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Midfielder",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Midfielder"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Okan_Buruk",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Turkish"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Okan Buruk"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Papara_Park",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "40682"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Trabzon"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Papara Park"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Paul_Onuachu",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasJerseyNumber" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "88"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Nigerian"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#playsPosition" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Forward"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Paul Onuachu"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Abstract superclass for any human individual in the football domain."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Person"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A professional footballer currently contracted to a Süper Lig club."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Player"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Person"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A playing position on a football pitch: Forward, Midfielder, Defender, or Goalkeeper. [Added v2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Position"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rafa_Silva",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasJerseyNumber" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "7"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Portuguese"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#playsPosition" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Midfielder"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Rafa Silva"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rams_Park",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "52223"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Rams Park"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Referee",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A licensed match official. Included for structural completeness; currently out of scope for population."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Referee"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Person"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rize",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Rize"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsun",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Samsun"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsun_19_Mayis_Stadium",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "33500"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsun"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Samsun 19 Mayis Stadium"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsunspor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1965"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsun_19_Mayis_Stadium"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#isManagedBy" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stjepan_Tomas"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsun"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Samsunspor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Season",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Süper Lig football season (e.g., 2025-26). [Added v2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Season"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Serdar_Topraktepe",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Turkish"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Serdar Topraktepe"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Sergen_Yalcin",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Turkish"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Sergen Yalcin"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Sivasspor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1967"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsun"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Sivasspor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A physical sports venue where Süper Lig matches are played."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Stadium"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stjepan_Tomas",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Croatian"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Stjepan Tomas"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Sukru_Saracoglu_Stadium",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "50509"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Sukru Saracoglu Stadium"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Superlig_Season_2025_26",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Season"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Superlig Season 2025-26"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A professional football club participating in the Turkish Süper Lig in the 2025-26 season."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Team"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Timsah_Arena",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "43500"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Bursa"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Timsah Arena"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Trabzon",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Trabzon"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Trabzonspor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1967"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Papara_Park"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasPlayer" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Paul_Onuachu"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#isManagedBy" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Abdullah_Avci"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Trabzon"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Trabzonspor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Tupras_Stadium",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "42584"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Tupras Stadium"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Victor_Osimhen",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasAge" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "26"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasJerseyNumber" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "9"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality" : [ {
+    "@value" : "Nigerian"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#playsPosition" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Forward"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Victor Osimhen"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Yeni_Hatay_Stadium",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "25000"
+  } ],
+  "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hatay"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Yeni Hatay Stadium"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#awayTeam",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relates a Match to the Team playing as the away side. [Added v2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "awayTeam"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasAge",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The age in years of a Player. [Added v2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasAge"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The official seating capacity of a Stadium. [Added v2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasCapacity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The year in which a Team was officially founded. [Added v2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasFoundedYear"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relates a Team to the Stadium it uses for home matches."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasHomeStadium"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasJerseyNumber",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The shirt number of a Player. [Added v2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasJerseyNumber"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The nationality of a Player or Manager. [Added v2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"
+  }, {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasNationality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasPlayer",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relates a Team to a Player currently contracted to it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasPlayer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#homeTeam",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relates a Match to the Team playing as the home side. [Added v2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "homeTeam"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#isManagedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relates a Team to its current head coach or manager."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "isManagedBy"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relates a Team or Stadium to the City in which it is geographically situated."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  }, {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "locatedInCity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#partOfSeason",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relates a Match to the Season it belongs to. [Added v2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "partOfSeason"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Season"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#participatesIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relates a Team to a Match in which it takes part. [Added v2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "participatesIn"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#playedAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relates a Match to the Stadium where it was played. [Added v2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "playedAt"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#playsPosition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relates a Player to their primary playing Position on the pitch. [Added v2]"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "playsPosition"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position"
+  } ]
+} ]

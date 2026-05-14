@@ -1,0 +1,1158 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/mehme/ontologies/2026/superlig#"
+     xml:base="http://www.semanticweb.org/mehme/ontologies/2026/superlig"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:superlig="http://www.semanticweb.org/mehme/ontologies/2026/superlig#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig/2.0"/>
+        <rdfs:comment xml:lang="en">An OWL 2 ontology representing the Turkish Süper Lig professional football league. Includes all 19 current teams, players, managers, stadiums, cities, playing positions, matches and seasons. Developed in Protégé 5.x using the METHONTOLOGY methodology. Phase 2 — May 2026.</rdfs:comment>
+        <rdfs:label xml:lang="en">Süper Lig Football Knowledge Ontology</rdfs:label>
+        <owl:versionInfo>2.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#awayTeam -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#awayTeam">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <rdfs:comment xml:lang="en">Relates a Match to the Team playing as the away side. [Added v2]</rdfs:comment>
+        <rdfs:label xml:lang="en">awayTeam</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <rdfs:comment xml:lang="en">Relates a Team to the Stadium it uses for home matches.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasHomeStadium</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasPlayer -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasPlayer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"/>
+        <rdfs:comment xml:lang="en">Relates a Team to a Player currently contracted to it.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasPlayer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#homeTeam -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#homeTeam">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <rdfs:comment xml:lang="en">Relates a Match to the Team playing as the home side. [Added v2]</rdfs:comment>
+        <rdfs:label xml:lang="en">homeTeam</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#isManagedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#isManagedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"/>
+        <rdfs:comment xml:lang="en">Relates a Team to its current head coach or manager.</rdfs:comment>
+        <rdfs:label xml:lang="en">isManagedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"/>
+        <rdfs:comment xml:lang="en">Relates a Team or Stadium to the City in which it is geographically situated.</rdfs:comment>
+        <rdfs:label xml:lang="en">locatedInCity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#partOfSeason -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#partOfSeason">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Season"/>
+        <rdfs:comment xml:lang="en">Relates a Match to the Season it belongs to. [Added v2]</rdfs:comment>
+        <rdfs:label xml:lang="en">partOfSeason</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#participatesIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#participatesIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match"/>
+        <rdfs:comment xml:lang="en">Relates a Team to a Match in which it takes part. [Added v2]</rdfs:comment>
+        <rdfs:label xml:lang="en">participatesIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#playedAt -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#playedAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <rdfs:comment xml:lang="en">Relates a Match to the Stadium where it was played. [Added v2]</rdfs:comment>
+        <rdfs:label xml:lang="en">playedAt</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#playsPosition -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#playsPosition">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position"/>
+        <rdfs:comment xml:lang="en">Relates a Player to their primary playing Position on the pitch. [Added v2]</rdfs:comment>
+        <rdfs:label xml:lang="en">playsPosition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasAge -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasAge">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">The age in years of a Player. [Added v2]</rdfs:comment>
+        <rdfs:label xml:lang="en">hasAge</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">The official seating capacity of a Stadium. [Added v2]</rdfs:comment>
+        <rdfs:label xml:lang="en">hasCapacity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">The year in which a Team was officially founded. [Added v2]</rdfs:comment>
+        <rdfs:label xml:lang="en">hasFoundedYear</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasJerseyNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasJerseyNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">The shirt number of a Player. [Added v2]</rdfs:comment>
+        <rdfs:label xml:lang="en">hasJerseyNumber</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The nationality of a Player or Manager. [Added v2]</rdfs:comment>
+        <rdfs:label xml:lang="en">hasNationality</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#City -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#City">
+        <rdfs:comment xml:lang="en">A Turkish city in which one or more Süper Lig teams or stadiums are located.</rdfs:comment>
+        <rdfs:label xml:lang="en">City</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Person"/>
+        <rdfs:comment xml:lang="en">The head coach or technical director responsible for managing a Süper Lig team.</rdfs:comment>
+        <rdfs:label xml:lang="en">Manager</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match">
+        <rdfs:comment xml:lang="en">An individual competitive fixture between two Süper Lig teams. [Added v2]</rdfs:comment>
+        <rdfs:label xml:lang="en">Match</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Person -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Person">
+        <rdfs:comment xml:lang="en">Abstract superclass for any human individual in the football domain.</rdfs:comment>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Person"/>
+        <rdfs:comment xml:lang="en">A professional footballer currently contracted to a Süper Lig club.</rdfs:comment>
+        <rdfs:label xml:lang="en">Player</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position">
+        <rdfs:comment xml:lang="en">A playing position on a football pitch: Forward, Midfielder, Defender, or Goalkeeper. [Added v2]</rdfs:comment>
+        <rdfs:label xml:lang="en">Position</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Referee -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Referee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Person"/>
+        <rdfs:comment xml:lang="en">A licensed match official. Included for structural completeness; currently out of scope for population.</rdfs:comment>
+        <rdfs:label xml:lang="en">Referee</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Season -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Season">
+        <rdfs:comment xml:lang="en">A Süper Lig football season (e.g., 2025-26). [Added v2]</rdfs:comment>
+        <rdfs:label xml:lang="en">Season</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium">
+        <rdfs:comment xml:lang="en">A physical sports venue where Süper Lig matches are played.</rdfs:comment>
+        <rdfs:label xml:lang="en">Stadium</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team">
+        <rdfs:comment xml:lang="en">A professional football club participating in the Turkish Süper Lig in the 2025-26 season.</rdfs:comment>
+        <rdfs:label xml:lang="en">Team</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Abdullah_Avci -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Abdullah_Avci">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"/>
+        <hasNationality>Turkish</hasNationality>
+        <rdfs:label xml:lang="en">Abdullah Avci</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Adis_Jahovic -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Adis_Jahovic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"/>
+        <playsPosition rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Forward"/>
+        <hasJerseyNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hasJerseyNumber>
+        <hasNationality>Macedonian</hasNationality>
+        <rdfs:label xml:lang="en">Adis Jahovic</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Alanyaspor -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Alanyaspor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalya"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1948</hasFoundedYear>
+        <rdfs:label xml:lang="en">Alanyaspor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankara -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankara">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"/>
+        <rdfs:label xml:lang="en">Ankara</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankara_Stad -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankara_Stad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankara"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19800</hasCapacity>
+        <rdfs:label xml:lang="en">Ankara Stadium</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankaragucu -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankaragucu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankara_Stad"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ankara"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1910</hasFoundedYear>
+        <rdfs:label xml:lang="en">Ankaragucu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalya -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalya">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"/>
+        <rdfs:label xml:lang="en">Antalya</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalya_Stadium -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalya_Stadium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalya"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32536</hasCapacity>
+        <rdfs:label xml:lang="en">Antalya Stadium</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalyaspor -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalyaspor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalya_Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Antalya"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1966</hasFoundedYear>
+        <rdfs:label xml:lang="en">Antalyaspor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ataturk_Olympic_Stadium -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ataturk_Olympic_Stadium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">76092</hasCapacity>
+        <rdfs:label xml:lang="en">Ataturk Olympic Stadium</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Basaksehir_FK -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Basaksehir_FK">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ataturk_Olympic_Stadium"/>
+        <isManagedBy rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ismail_Kartal"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1990</hasFoundedYear>
+        <rdfs:label xml:lang="en">Basaksehir FK</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Besiktas -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Besiktas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Tupras_Stadium"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rafa_Silva"/>
+        <isManagedBy rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Serdar_Topraktepe"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1903</hasFoundedYear>
+        <rdfs:label xml:lang="en">Besiktas</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Bursa -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Bursa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"/>
+        <rdfs:label xml:lang="en">Bursa</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Bursaspor -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Bursaspor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Timsah_Arena"/>
+        <isManagedBy rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Sergen_Yalcin"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Bursa"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1963</hasFoundedYear>
+        <rdfs:label xml:lang="en">Bursaspor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Caykur_Didi_Stadium -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Caykur_Didi_Stadium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rize"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15600</hasCapacity>
+        <rdfs:label xml:lang="en">Caykur Didi Stadium</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Caykur_Rizespor -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Caykur_Rizespor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Caykur_Didi_Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rize"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1953</hasFoundedYear>
+        <rdfs:label xml:lang="en">Caykur Rizespor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Defender -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Defender">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position"/>
+        <rdfs:label xml:lang="en">Defender</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dominic_Tedesco -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dominic_Tedesco">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"/>
+        <hasNationality>German</hasNationality>
+        <rdfs:label xml:lang="en">Dominic Tedesco</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dries_Mertens -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dries_Mertens">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"/>
+        <playsPosition rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Forward"/>
+        <hasJerseyNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</hasJerseyNumber>
+        <hasNationality>Belgian</hasNationality>
+        <rdfs:label xml:lang="en">Dries Mertens</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dusan_Tadic -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dusan_Tadic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"/>
+        <playsPosition rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Midfielder"/>
+        <hasJerseyNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</hasJerseyNumber>
+        <hasNationality>Serbian</hasNationality>
+        <rdfs:label xml:lang="en">Dusan Tadic</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Eyupspor -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Eyupspor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1954</hasFoundedYear>
+        <rdfs:label xml:lang="en">Eyupspor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Fenerbahce -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Fenerbahce">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Sukru_Saracoglu_Stadium"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dusan_Tadic"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Mauro_Icardi"/>
+        <isManagedBy rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dominic_Tedesco"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1907</hasFoundedYear>
+        <rdfs:label xml:lang="en">Fenerbahce</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Forward -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Forward">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position"/>
+        <rdfs:label xml:lang="en">Forward</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Galatasaray -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Galatasaray">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rams_Park"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Dries_Mertens"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kerem_Akturkoglu"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Victor_Osimhen"/>
+        <isManagedBy rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Okan_Buruk"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1905</hasFoundedYear>
+        <rdfs:label xml:lang="en">Galatasaray</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Gaziantep -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Gaziantep">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"/>
+        <rdfs:label xml:lang="en">Gaziantep</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Gaziantep_FK -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Gaziantep_FK">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kalyon_Gaziantep_Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Gaziantep"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1988</hasFoundedYear>
+        <rdfs:label xml:lang="en">Gaziantep FK</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Goalkeeper -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Goalkeeper">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position"/>
+        <rdfs:label xml:lang="en">Goalkeeper</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Goztepe -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Goztepe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Izmir"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1925</hasFoundedYear>
+        <rdfs:label xml:lang="en">Goztepe</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hakan_Kutlu -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hakan_Kutlu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"/>
+        <hasNationality>Turkish</hasNationality>
+        <rdfs:label xml:lang="en">Hakan Kutlu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hatay -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hatay">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"/>
+        <rdfs:label xml:lang="en">Hatay</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hatayspor -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hatayspor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Yeni_Hatay_Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hatay"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1967</hasFoundedYear>
+        <rdfs:label xml:lang="en">Hatayspor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ismail_Kartal -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Ismail_Kartal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"/>
+        <hasNationality>Turkish</hasNationality>
+        <rdfs:label xml:lang="en">Ismail Kartal</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"/>
+        <rdfs:label xml:lang="en">Istanbul</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Izmir -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Izmir">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"/>
+        <rdfs:label xml:lang="en">Izmir</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kadir_Has_Stadium -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kadir_Has_Stadium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kayseri"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32864</hasCapacity>
+        <rdfs:label xml:lang="en">Kadir Has Stadium</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kalyon_Gaziantep_Stadium -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kalyon_Gaziantep_Stadium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Gaziantep"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35336</hasCapacity>
+        <rdfs:label xml:lang="en">Kalyon Gaziantep Stadium</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kasimpasa -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kasimpasa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1921</hasFoundedYear>
+        <rdfs:label xml:lang="en">Kasimpasa</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kayseri -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kayseri">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"/>
+        <rdfs:label xml:lang="en">Kayseri</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kayserispor -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kayserispor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kadir_Has_Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kayseri"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1966</hasFoundedYear>
+        <rdfs:label xml:lang="en">Kayserispor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kerem_Akturkoglu -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Kerem_Akturkoglu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"/>
+        <playsPosition rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Midfielder"/>
+        <hasJerseyNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">77</hasJerseyNumber>
+        <hasNationality>Turkish</hasNationality>
+        <rdfs:label xml:lang="en">Kerem Akturkoglu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konya -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konya">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"/>
+        <rdfs:label xml:lang="en">Konya</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konya_Buyuksehir_Stadium -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konya_Buyuksehir_Stadium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konya"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42512</hasCapacity>
+        <rdfs:label xml:lang="en">Konya Buyuksehir Stadium</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konyaspor -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konyaspor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konya_Buyuksehir_Stadium"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Adis_Jahovic"/>
+        <isManagedBy rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hakan_Kutlu"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Konya"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1922</hasFoundedYear>
+        <rdfs:label xml:lang="en">Konyaspor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match_GS_FB_2025 -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match_GS_FB_2025">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match"/>
+        <awayTeam rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Fenerbahce"/>
+        <homeTeam rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Galatasaray"/>
+        <partOfSeason rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Superlig_Season_2025_26"/>
+        <playedAt rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rams_Park"/>
+        <rdfs:label xml:lang="en">Galatasaray vs Fenerbahce 2025</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Mauro_Icardi -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Mauro_Icardi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"/>
+        <playsPosition rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Forward"/>
+        <hasJerseyNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hasJerseyNumber>
+        <hasNationality>Argentine</hasNationality>
+        <rdfs:label xml:lang="en">Mauro Icardi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Midfielder -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Midfielder">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position"/>
+        <rdfs:label xml:lang="en">Midfielder</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Okan_Buruk -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Okan_Buruk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"/>
+        <hasNationality>Turkish</hasNationality>
+        <rdfs:label xml:lang="en">Okan Buruk</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Papara_Park -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Papara_Park">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Trabzon"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40682</hasCapacity>
+        <rdfs:label xml:lang="en">Papara Park</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Paul_Onuachu -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Paul_Onuachu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"/>
+        <playsPosition rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Forward"/>
+        <hasJerseyNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88</hasJerseyNumber>
+        <hasNationality>Nigerian</hasNationality>
+        <rdfs:label xml:lang="en">Paul Onuachu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rafa_Silva -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rafa_Silva">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"/>
+        <playsPosition rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Midfielder"/>
+        <hasJerseyNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hasJerseyNumber>
+        <hasNationality>Portuguese</hasNationality>
+        <rdfs:label xml:lang="en">Rafa Silva</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rams_Park -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rams_Park">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52223</hasCapacity>
+        <rdfs:label xml:lang="en">Rams Park</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rize -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Rize">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"/>
+        <rdfs:label xml:lang="en">Rize</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsun -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsun">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"/>
+        <rdfs:label xml:lang="en">Samsun</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsun_19_Mayis_Stadium -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsun_19_Mayis_Stadium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsun"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33500</hasCapacity>
+        <rdfs:label xml:lang="en">Samsun 19 Mayis Stadium</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsunspor -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsunspor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsun_19_Mayis_Stadium"/>
+        <isManagedBy rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stjepan_Tomas"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsun"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1965</hasFoundedYear>
+        <rdfs:label xml:lang="en">Samsunspor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Serdar_Topraktepe -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Serdar_Topraktepe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"/>
+        <hasNationality>Turkish</hasNationality>
+        <rdfs:label xml:lang="en">Serdar Topraktepe</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Sergen_Yalcin -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Sergen_Yalcin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"/>
+        <hasNationality>Turkish</hasNationality>
+        <rdfs:label xml:lang="en">Sergen Yalcin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Sivasspor -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Sivasspor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Samsun"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1967</hasFoundedYear>
+        <rdfs:label xml:lang="en">Sivasspor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stjepan_Tomas -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stjepan_Tomas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager"/>
+        <hasNationality>Croatian</hasNationality>
+        <rdfs:label xml:lang="en">Stjepan Tomas</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Sukru_Saracoglu_Stadium -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Sukru_Saracoglu_Stadium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50509</hasCapacity>
+        <rdfs:label xml:lang="en">Sukru Saracoglu Stadium</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Superlig_Season_2025_26 -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Superlig_Season_2025_26">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Season"/>
+        <rdfs:label xml:lang="en">Superlig Season 2025-26</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Timsah_Arena -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Timsah_Arena">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Bursa"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43500</hasCapacity>
+        <rdfs:label xml:lang="en">Timsah Arena</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Trabzon -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Trabzon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#City"/>
+        <rdfs:label xml:lang="en">Trabzon</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Trabzonspor -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Trabzonspor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team"/>
+        <hasHomeStadium rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Papara_Park"/>
+        <hasPlayer rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Paul_Onuachu"/>
+        <isManagedBy rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Abdullah_Avci"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Trabzon"/>
+        <hasFoundedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1967</hasFoundedYear>
+        <rdfs:label xml:lang="en">Trabzonspor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Tupras_Stadium -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Tupras_Stadium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Istanbul"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42584</hasCapacity>
+        <rdfs:label xml:lang="en">Tupras Stadium</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Victor_Osimhen -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Victor_Osimhen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player"/>
+        <playsPosition rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Forward"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</hasAge>
+        <hasJerseyNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hasJerseyNumber>
+        <hasNationality>Nigerian</hasNationality>
+        <rdfs:label xml:lang="en">Victor Osimhen</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mehme/ontologies/2026/superlig#Yeni_Hatay_Stadium -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Yeni_Hatay_Stadium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/mehme/ontologies/2026/superlig#Hatay"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25000</hasCapacity>
+        <rdfs:label xml:lang="en">Yeni Hatay Stadium</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
