@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Süper Lig Football Knowledge Ontology</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#fafafa;color:#1a1a1a;line-height:1.65}
+a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+code{font-family:'Cascadia Code','Fira Code',monospace;font-size:.83em;background:#f1f3f5;padding:2px 5px;border-radius:4px;word-break:break-all}
+
+/* layout */
+#wrap{display:flex;min-height:100vh}
+#sidebar{width:270px;min-width:220px;background:#1b3a6b;color:#fff;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+#main{flex:1;padding:2.2rem 3rem;min-width:0}
+
+/* sidebar */
+.sb-brand{padding:1.4rem 1.2rem;background:rgba(0,0,0,.3)}
+.sb-brand h1{font-size:1rem;font-weight:700;color:#fff;line-height:1.3}
+.sb-brand .ver{font-size:.75rem;color:rgba(255,255,255,.55);margin-top:.3rem}
+#sidebar h2{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.45);padding:1.2rem 1.2rem .3rem}
+#sidebar ul{list-style:none}
+#sidebar ul li a{display:block;padding:.32rem 1.2rem;color:rgba(255,255,255,.78);font-size:.85rem;border-left:3px solid transparent;transition:.12s}
+#sidebar ul li a:hover{color:#fff;background:rgba(255,255,255,.1);border-left-color:#e63946;text-decoration:none}
+
+/* page header */
+.pg-head{border-bottom:3px solid #e63946;padding-bottom:1.6rem;margin-bottom:2rem}
+.pg-head h1{font-size:1.9rem;color:#1b3a6b;font-weight:800}
+.pg-head .sub{color:#666;font-size:.92rem;margin-top:.3rem}
+.badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.badge{padding:.28rem .85rem;border-radius:999px;font-size:.78rem;font-weight:700}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.9rem;margin:1.5rem 0 2.2rem}
+.stat{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:.9rem;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.snum{font-size:1.9rem;font-weight:800;color:#1b3a6b}
+.slbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-top:.2rem}
+
+/* section titles */
+.sec-title{font-size:1.45rem;font-weight:700;color:#1b3a6b;border-bottom:2px solid #e2e8f0;padding-bottom:.5rem;margin:2.8rem 0 1rem}
+.sec-desc{color:#666;font-size:.9rem;margin-bottom:1.2rem}
+
+/* entity cards */
+.entity-card{border:1px solid #e2e8f0;border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.card-head{padding:.9rem 1.2rem;display:flex;flex-direction:column;gap:.25rem}
+.cls-head{background:#eef2ff;border-bottom:2px solid #c7d2fe}
+.op-head {background:#f0fdf4;border-bottom:2px solid #bbf7d0}
+.dp-head {background:#fff7ed;border-bottom:2px solid #fed7aa}
+.card-head h3{font-size:1.1rem;color:#1b3a6b;font-weight:700}
+.type-pill{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#888}
+.iri-line{margin-top:.1rem}
+.iri-line code{font-size:.7rem;color:#888;background:none;padding:0}
+.card-body{padding:1rem 1.2rem;background:#fff}
+.desc{color:#444;font-size:.9rem;margin-bottom:.9rem}
+details summary{cursor:pointer;color:#2563eb;font-size:.87rem;margin-top:.5rem;padding:.2rem 0}
+details[open] summary{margin-bottom:.5rem}
+
+/* property table */
+.pt{border-collapse:collapse;width:100%;font-size:.87rem;margin-top:.3rem}
+.pt th{text-align:left;padding:.4rem .9rem;background:#f8fafc;border:1px solid #e2e8f0;width:180px;color:#555;font-weight:600}
+.pt td{padding:.4rem .9rem;border:1px solid #e2e8f0}
+
+/* meta table */
+.mt{border-collapse:collapse;width:100%;font-size:.9rem;margin:1rem 0}
+.mt th{text-align:left;padding:.5rem 1rem;background:#f8fafc;border:1px solid #e2e8f0;width:210px;color:#555;font-weight:600}
+.mt td{padding:.5rem 1rem;border:1px solid #e2e8f0}
+
+/* hierarchy pre */
+.hier{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:1.1rem 1.4rem;font-size:.9rem;font-family:'Cascadia Code','Fira Code',monospace;overflow:auto;line-height:1.8}
+
+footer{margin-top:4rem;padding:1.8rem 0;border-top:1px solid #e2e8f0;color:#999;font-size:.83rem}
+
+@media(max-width:700px){
+  #wrap{flex-direction:column}
+  #sidebar{width:100%;height:auto;position:static}
+  #main{padding:1.2rem}
+}
+</style>
+</head>
+<body>
+<div id="wrap">
+
+<nav id="sidebar">
+  <div class="sb-brand">
+    <h1>Süper Lig Ontology</h1>
+    <div class="ver">v4.0 · May 2026 · OWL 2 DL</div>
+  </div>
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#metadata">Ontology Metadata</a></li>
+    <li><a href="#overview">Statistics</a></li>
+    <li><a href="#namespaces">Namespaces</a></li>
+    <li><a href="#hierarchy">Class Hierarchy</a></li>
+    <li><a href="#classes">Classes</a></li>
+    <li><a href="#objectproperties">Object Properties</a></li>
+    <li><a href="#dataproperties">Data Properties</a></li>
+  </ul>
+  <h2>Classes</h2>
+  <ul><li><a href="#city">City</a></li><li><a href="#person">Person</a></li><li><a href="#player">Player</a></li><li><a href="#manager">Manager</a></li><li><a href="#referee">Referee</a></li><li><a href="#stadium">Stadium</a></li><li><a href="#team">Team</a></li><li><a href="#match">Match</a></li><li><a href="#season">Season</a></li><li><a href="#position">Position</a></li></ul>
+  <h2>Object Properties</h2>
+  <ul><li><a href="#hashomestadium">hasHomeStadium</a></li><li><a href="#hasplayer">hasPlayer</a></li><li><a href="#ismanagedby">isManagedBy</a></li><li><a href="#locatedincity">locatedInCity</a></li><li><a href="#playsposition">playsPosition</a></li><li><a href="#participatesin">participatesIn</a></li><li><a href="#hometeam">homeTeam</a></li><li><a href="#awayteam">awayTeam</a></li><li><a href="#playedat">playedAt</a></li><li><a href="#partofseason">partOfSeason</a></li><li><a href="#officatedby">officatedBy</a></li></ul>
+  <h2>Data Properties</h2>
+  <ul><li><a href="#hascapacity">hasCapacity</a></li><li><a href="#hasnationality">hasNationality</a></li><li><a href="#hasage">hasAge</a></li><li><a href="#hasjerseynumber">hasJerseyNumber</a></li><li><a href="#hasfoundedyear">hasFoundedYear</a></li><li><a href="#haslicenselevel">hasLicenseLevel</a></li><li><a href="#hasmatchdate">hasMatchDate</a></li><li><a href="#hasmatchweek">hasMatchweek</a></li><li><a href="#hashomescore">hasHomeScore</a></li><li><a href="#hasawayscore">hasAwayScore</a></li><li><a href="#hasmatchresult">hasMatchResult</a></li><li><a href="#hasattendance">hasAttendance</a></li><li><a href="#hasmanagernationality">hasManagerNationality</a></li></ul>
+</nav>
+
+<main id="main">
+
+<div class="pg-head">
+  <h1>Süper Lig Football Knowledge Ontology</h1>
+  <div class="sub">OWL 2 DL · Protégé 5.x · METHONTOLOGY · Turkish Süper Lig 2025-26</div>
+  <div class="badges">
+    <span class="badge" style="background:#d4edda;color:#155724">19 Teams</span>
+    <span class="badge" style="background:#cce5ff;color:#004085">309 Players</span>
+    <span class="badge" style="background:#fff3cd;color:#856404">343 Matches</span>
+    <span class="badge" style="background:#f8d7da;color:#721c24">20 Referees</span>
+    <span class="badge" style="background:#e2d9f3;color:#4a235a">19 Managers</span>
+    <span class="badge" style="background:#d1ecf1;color:#0c5460">19 Stadiums</span>
+    <span class="badge" style="background:#f1f3f5;color:#333">11 Object Props</span>
+    <span class="badge" style="background:#f1f3f5;color:#333">13 Data Props</span>
+  </div>
+</div>
+
+<h2 class="sec-title" id="metadata">Ontology Metadata</h2>
+<table class="mt">
+  <tr><th>Ontology IRI</th><td><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig</code></td></tr>
+  <tr><th>Version IRI</th><td><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig/4.0</code></td></tr>
+  <tr><th>Current Version</th><td>4.0</td></tr>
+  <tr><th>OWL Profile</th><td>OWL 2 DL</td></tr>
+  <tr><th>Serialization</th><td>RDF/XML (UTF-8)</td></tr>
+  <tr><th>Reasoner compatible</th><td>HermiT 1.4, Pellet 2.x, FaCT++</td></tr>
+  <tr><th>Methodology</th><td>METHONTOLOGY</td></tr>
+  <tr><th>Tool</th><td>Protégé 5.x</td></tr>
+  <tr><th>Domain</th><td>Football / Turkish Süper Lig 2025-26</td></tr>
+  <tr><th>Created</th><td>May 2026</td></tr>
+  <tr><th>Description</th><td>An OWL 2 ontology representing the Turkish Süper Lig professional football league 2025-26 season. Includes all 19 teams, 309 players, 19 managers, 20 referees, 19 stadiums and 343 matches. Developed in Protégé 5.x using the METHONTOLOGY methodology. Version 4.0 — May 2026.</td></tr>
+</table>
+
+<h2 class="sec-title" id="overview">Statistics</h2>
+<div class="stats">
+<div class="stat"><div class="snum">12</div><div class="slbl">Citys</div></div><div class="stat"><div class="snum">0</div><div class="slbl">Persons</div></div><div class="stat"><div class="snum">309</div><div class="slbl">Players</div></div><div class="stat"><div class="snum">19</div><div class="slbl">Managers</div></div><div class="stat"><div class="snum">20</div><div class="slbl">Referees</div></div><div class="stat"><div class="snum">19</div><div class="slbl">Stadiums</div></div><div class="stat"><div class="snum">19</div><div class="slbl">Teams</div></div><div class="stat"><div class="snum">343</div><div class="slbl">Matchs</div></div><div class="stat"><div class="snum">1</div><div class="slbl">Seasons</div></div><div class="stat"><div class="snum">4</div><div class="slbl">Positions</div></div>
+  <div class="stat"><div class="snum">11</div><div class="slbl">Object Props</div></div>
+  <div class="stat"><div class="snum">13</div><div class="slbl">Data Props</div></div>
+  <div class="stat"><div class="snum">10</div><div class="slbl">Classes</div></div>
+</div>
+
+<h2 class="sec-title" id="namespaces">Namespaces</h2>
+<table class="pt" style="max-width:750px">
+  <tr><th>Prefix</th><th>Namespace IRI</th></tr>
+  <tr><td><code>:</code> (default)</td><td><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#</code></td></tr>
+  <tr><td><code>owl</code></td><td><code>http://www.w3.org/2002/07/owl#</code></td></tr>
+  <tr><td><code>rdf</code></td><td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td></tr>
+  <tr><td><code>rdfs</code></td><td><code>http://www.w3.org/2000/01/rdf-schema#</code></td></tr>
+  <tr><td><code>xsd</code></td><td><code>http://www.w3.org/2001/XMLSchema#</code></td></tr>
+</table>
+
+<h2 class="sec-title" id="hierarchy">Class Hierarchy</h2>
+<pre class="hier">owl:Thing
+ ├── City
+ ├── Position
+ ├── Season
+ ├── Stadium
+ ├── Team
+ ├── Match
+ └── Person
+      ├── Manager
+      ├── Player
+      └── Referee</pre>
+
+<h2 class="sec-title" id="classes">Classes</h2>
+<p class="sec-desc">The ontology defines 10 named classes forming the core vocabulary of the Turkish Süper Lig domain.</p>
+
+<section class="entity-card" id="city">
+  <div class="card-head cls-head">
+    <span class="type-pill">Class</span>
+    <h3>City</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#City</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">A Turkish city in which one or more Süper Lig teams or stadiums are located.</p>
+    <table class="pt">
+      <tr><th>IRI</th><td><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#City</code></td></tr>
+      
+      <tr><th>Individuals</th><td><strong>12</strong></td></tr>
+    </table>
+    <details>
+      <summary>Browse 12 individual(s)</summary>
+      <div style="margin-top:.6rem;"><table style="width:100%;border-collapse:collapse;font-size:.88rem;"><thead><tr><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Individual</th><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Properties</th></tr></thead><tbody><tr><td><code>Istanbul</code></td><td style="font-size:.83rem;color:#555;"></td></tr><tr><td><code>Ankara</code></td><td style="font-size:.83rem;color:#555;"></td></tr><tr><td><code>Trabzon</code></td><td style="font-size:.83rem;color:#555;"></td></tr><tr><td><code>Konya</code></td><td style="font-size:.83rem;color:#555;"></td></tr><tr><td><code>Samsun</code></td><td style="font-size:.83rem;color:#555;"></td></tr><tr><td><code>Gaziantep</code></td><td style="font-size:.83rem;color:#555;"></td></tr><tr><td><code>Izmir</code></td><td style="font-size:.83rem;color:#555;"></td></tr><tr><td><code>Kayseri</code></td><td style="font-size:.83rem;color:#555;"></td></tr><tr><td><code>Antalya</code></td><td style="font-size:.83rem;color:#555;"></td></tr><tr><td><code>Hatay</code></td><td style="font-size:.83rem;color:#555;"></td></tr><tr><td><code>Rize</code></td><td style="font-size:.83rem;color:#555;"></td></tr><tr><td><code>Bursa</code></td><td style="font-size:.83rem;color:#555;"></td></tr></tbody></table></div>
+    </details>
+  </div>
+</section>
+
+<section class="entity-card" id="person">
+  <div class="card-head cls-head">
+    <span class="type-pill">Class</span>
+    <h3>Person</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Person</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Abstract superclass for any human individual in the football domain.</p>
+    <table class="pt">
+      <tr><th>IRI</th><td><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Person</code></td></tr>
+      
+      <tr><th>Individuals</th><td><strong>0</strong></td></tr>
+    </table>
+    <details>
+      <summary>Browse 0 individual(s)</summary>
+      <div style="margin-top:.6rem;"><p style="color:#888;font-size:.88rem;">No individuals in this class.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="entity-card" id="player">
+  <div class="card-head cls-head">
+    <span class="type-pill">Class</span>
+    <h3>Player</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">A professional footballer currently contracted to a Süper Lig club.</p>
+    <table class="pt">
+      <tr><th>IRI</th><td><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Player</code></td></tr>
+      <tr><th>Subclass of</th><td><a href="#person">Person</a></td></tr>
+      <tr><th>Individuals</th><td><strong>309</strong></td></tr>
+    </table>
+    <details>
+      <summary>Browse 309 individual(s)</summary>
+      <div style="margin-top:.6rem;"><table style="width:100%;border-collapse:collapse;font-size:.88rem;"><thead><tr><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Individual</th><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Properties</th></tr></thead><tbody><tr><td><code>Victor Osimhen</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Forward; <em>hasNationality</em>: Nigerian; <em>hasJerseyNumber</em>: 9; <em>hasAge</em>: 26</td></tr><tr><td><code>Kerem Akturkoglu</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Midfielder; <em>hasNationality</em>: Turkish; <em>hasJerseyNumber</em>: 77</td></tr><tr><td><code>Dries Mertens</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Forward; <em>hasNationality</em>: Belgian; <em>hasJerseyNumber</em>: 14</td></tr><tr><td><code>Mauro Icardi</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Forward; <em>hasNationality</em>: Argentine; <em>hasJerseyNumber</em>: 9</td></tr><tr><td><code>Dusan Tadic</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Midfielder; <em>hasNationality</em>: Serbian; <em>hasJerseyNumber</em>: 10</td></tr><tr><td><code>Rafa Silva</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Midfielder; <em>hasNationality</em>: Portuguese; <em>hasJerseyNumber</em>: 7</td></tr><tr><td><code>Paul Onuachu</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Forward; <em>hasNationality</em>: Nigerian; <em>hasJerseyNumber</em>: 88</td></tr><tr><td><code>Adis Jahovic</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Forward; <em>hasNationality</em>: Macedonian; <em>hasJerseyNumber</em>: 9</td></tr><tr><td><code>Fernando Muslera</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Goalkeeper; <em>hasNationality</em>: Uruguayan; <em>hasJerseyNumber</em>: 1; <em>hasAge</em>: 32</td></tr><tr><td><code>Inaki Pena</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Goalkeeper; <em>hasNationality</em>: Spanish; <em>hasJerseyNumber</em>: 13; <em>hasAge</em>: 26</td></tr><tr><td><code>Victor Nelsson</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Defender; <em>hasNationality</em>: Danish; <em>hasJerseyNumber</em>: 4; <em>hasAge</em>: 26</td></tr><tr><td><code>Sergio Oliveira</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Defender; <em>hasNationality</em>: Portuguese; <em>hasJerseyNumber</em>: 5; <em>hasAge</em>: 32</td></tr><tr><td><code>Sacha Boey</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Defender; <em>hasNationality</em>: French; <em>hasJerseyNumber</em>: 17; <em>hasAge</em>: 23</td></tr><tr><td><code>Patrick Van Aanholt</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Defender; <em>hasNationality</em>: Dutch; <em>hasJerseyNumber</em>: 3; <em>hasAge</em>: 34</td></tr><tr><td><code>Abdülkerim Bardakcı</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Defender; <em>hasNationality</em>: Turkish; <em>hasJerseyNumber</em>: 33; <em>hasAge</em>: 27</td></tr><tr><td><code>Davinson Sanchez</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Defender; <em>hasNationality</em>: Colombian; <em>hasJerseyNumber</em>: 6; <em>hasAge</em>: 28</td></tr><tr><td><code>Lucas Torreira</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Midfielder; <em>hasNationality</em>: Uruguayan; <em>hasJerseyNumber</em>: 8; <em>hasAge</em>: 28</td></tr><tr><td><code>Yunus Akgün</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Midfielder; <em>hasNationality</em>: Turkish; <em>hasJerseyNumber</em>: 18; <em>hasAge</em>: 24</td></tr><tr><td><code>Seferovic</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Midfielder; <em>hasNationality</em>: Swiss; <em>hasJerseyNumber</em>: 20; <em>hasAge</em>: 32</td></tr><tr><td><code>Milot Rashica</code></td><td style="font-size:.83rem;color:#555;"><em>playsPosition</em>: Midfielder; <em>hasNationality</em>: Kosovar; <em>hasJerseyNumber</em>: 11; <em>hasAge</em>: 28</td></tr><tr><td colspan="2" style="color:#888;font-style:italic;font-size:.83rem;">… and 289 more</td></tr></tbody></table></div>
+    </details>
+  </div>
+</section>
+
+<section class="entity-card" id="manager">
+  <div class="card-head cls-head">
+    <span class="type-pill">Class</span>
+    <h3>Manager</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">The head coach or technical director responsible for managing a Süper Lig team.</p>
+    <table class="pt">
+      <tr><th>IRI</th><td><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Manager</code></td></tr>
+      <tr><th>Subclass of</th><td><a href="#person">Person</a></td></tr>
+      <tr><th>Individuals</th><td><strong>19</strong></td></tr>
+    </table>
+    <details>
+      <summary>Browse 19 individual(s)</summary>
+      <div style="margin-top:.6rem;"><table style="width:100%;border-collapse:collapse;font-size:.88rem;"><thead><tr><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Individual</th><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Properties</th></tr></thead><tbody><tr><td><code>Okan Buruk</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr><tr><td><code>Dominic Tedesco</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: German</td></tr><tr><td><code>Serdar Topraktepe</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr><tr><td><code>Abdullah Avci</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr><tr><td><code>Stjepan Tomas</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Croatian</td></tr><tr><td><code>Ismail Kartal</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr><tr><td><code>Sergen Yalcin</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr><tr><td><code>Hakan Kutlu</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr><tr><td><code>Selçuk İnan</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr><tr><td><code>Recep Uçar</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr><tr><td><code>Nuri Şahin</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr><tr><td><code>Ömer Erdoğan</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr><tr><td><code>Bülent Uygun</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr><tr><td><code>Taner Savut</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr><tr><td><code>Francesco Farioli</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Italian</td></tr><tr><td><code>Rıza Çalımbay</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr><tr><td><code>Murat Yakin</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Swiss</td></tr><tr><td><code>Tolunay Kafkas</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr><tr><td><code>Mustafa Denizli</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish</td></tr></tbody></table></div>
+    </details>
+  </div>
+</section>
+
+<section class="entity-card" id="referee">
+  <div class="card-head cls-head">
+    <span class="type-pill">Class</span>
+    <h3>Referee</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Referee</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">A licensed match official. Included for structural completeness; currently out of scope for population.</p>
+    <table class="pt">
+      <tr><th>IRI</th><td><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Referee</code></td></tr>
+      <tr><th>Subclass of</th><td><a href="#person">Person</a></td></tr>
+      <tr><th>Individuals</th><td><strong>20</strong></td></tr>
+    </table>
+    <details>
+      <summary>Browse 20 individual(s)</summary>
+      <div style="margin-top:.6rem;"><table style="width:100%;border-collapse:collapse;font-size:.88rem;"><thead><tr><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Individual</th><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Properties</th></tr></thead><tbody><tr><td><code>Ali Palabıyık</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: FIFA</td></tr><tr><td><code>Halil Umut Meler</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: FIFA</td></tr><tr><td><code>Tugay Kaan Nümeroğlu</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: TFF</td></tr><tr><td><code>Atilla Karaoğlan</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: TFF</td></tr><tr><td><code>Çağdaş Yıldız</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: TFF</td></tr><tr><td><code>Abdülkadir Bitigen</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: FIFA</td></tr><tr><td><code>Zorbay Küçük</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: TFF</td></tr><tr><td><code>Erkan Özdamar</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: FIFA</td></tr><tr><td><code>Sarper Barış Saka</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: TFF</td></tr><tr><td><code>Burak Şeke</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: TFF</td></tr><tr><td><code>Volkan Bayarslan</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: TFF</td></tr><tr><td><code>Arda Kardeniz</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: TFF</td></tr><tr><td><code>Murat Ilgaz</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: TFF</td></tr><tr><td><code>Yasin Köl</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: TFF</td></tr><tr><td><code>Koray Gençerler</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: FIFA</td></tr><tr><td><code>Serkan Tokat</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: TFF</td></tr><tr><td><code>Halis Özkahya</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: FIFA</td></tr><tr><td><code>Bülent Yıldırım</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: FIFA</td></tr><tr><td><code>Önder Karavelioğlu</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: TFF</td></tr><tr><td><code>Cem Satman</code></td><td style="font-size:.83rem;color:#555;"><em>hasNationality</em>: Turkish; <em>hasLicenseLevel</em>: TFF</td></tr></tbody></table></div>
+    </details>
+  </div>
+</section>
+
+<section class="entity-card" id="stadium">
+  <div class="card-head cls-head">
+    <span class="type-pill">Class</span>
+    <h3>Stadium</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">A physical sports venue where Süper Lig matches are played.</p>
+    <table class="pt">
+      <tr><th>IRI</th><td><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Stadium</code></td></tr>
+      
+      <tr><th>Individuals</th><td><strong>19</strong></td></tr>
+    </table>
+    <details>
+      <summary>Browse 19 individual(s)</summary>
+      <div style="margin-top:.6rem;"><table style="width:100%;border-collapse:collapse;font-size:.88rem;"><thead><tr><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Individual</th><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Properties</th></tr></thead><tbody><tr><td><code>Rams Park</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Istanbul; <em>hasCapacity</em>: 52223</td></tr><tr><td><code>Sukru Saracoglu Stadium</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Istanbul; <em>hasCapacity</em>: 50509</td></tr><tr><td><code>Tupras Stadium</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Istanbul; <em>hasCapacity</em>: 42584</td></tr><tr><td><code>Papara Park</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Trabzon; <em>hasCapacity</em>: 40682</td></tr><tr><td><code>Konya Buyuksehir Stadium</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Konya; <em>hasCapacity</em>: 42512</td></tr><tr><td><code>Samsun 19 Mayis Stadium</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Samsun; <em>hasCapacity</em>: 33500</td></tr><tr><td><code>Kalyon Gaziantep Stadium</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Gaziantep; <em>hasCapacity</em>: 35336</td></tr><tr><td><code>Ataturk Olympic Stadium</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Istanbul; <em>hasCapacity</em>: 76092</td></tr><tr><td><code>Kadir Has Stadium</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Kayseri; <em>hasCapacity</em>: 32864</td></tr><tr><td><code>Antalya Stadium</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Antalya; <em>hasCapacity</em>: 32536</td></tr><tr><td><code>Yeni Hatay Stadium</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Hatay; <em>hasCapacity</em>: 25000</td></tr><tr><td><code>Caykur Didi Stadium</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Rize; <em>hasCapacity</em>: 15600</td></tr><tr><td><code>Timsah Arena</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Bursa; <em>hasCapacity</em>: 43500</td></tr><tr><td><code>Ankara Stadium</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Ankara; <em>hasCapacity</em>: 19800</td></tr><tr><td><code>Recep Tayyip Erdoğan Stadyumu</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Istanbul; <em>hasCapacity</em>: 14500</td></tr><tr><td><code>Bahçeşehir Okulları Stadyumu</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Antalya; <em>hasCapacity</em>: 25000</td></tr><tr><td><code>Sivas 4 Eylül Stadyumu</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Samsun; <em>hasCapacity</em>: 23189</td></tr><tr><td><code>Gürsel Aksel Stadyumu</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Izmir; <em>hasCapacity</em>: 19500</td></tr><tr><td><code>Haliç Stadyumu</code></td><td style="font-size:.83rem;color:#555;"><em>locatedInCity</em>: Istanbul; <em>hasCapacity</em>: 21000</td></tr></tbody></table></div>
+    </details>
+  </div>
+</section>
+
+<section class="entity-card" id="team">
+  <div class="card-head cls-head">
+    <span class="type-pill">Class</span>
+    <h3>Team</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">A professional football club participating in the Turkish Süper Lig in the 2025-26 season.</p>
+    <table class="pt">
+      <tr><th>IRI</th><td><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Team</code></td></tr>
+      
+      <tr><th>Individuals</th><td><strong>19</strong></td></tr>
+    </table>
+    <details>
+      <summary>Browse 19 individual(s)</summary>
+      <div style="margin-top:.6rem;"><table style="width:100%;border-collapse:collapse;font-size:.88rem;"><thead><tr><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Individual</th><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Properties</th></tr></thead><tbody><tr><td><code>Galatasaray</code></td><td style="font-size:.83rem;color:#555;"><em>hasPlayer</em>: GS_Metehan_Baltaci</td></tr><tr><td><code>Fenerbahce</code></td><td style="font-size:.83rem;color:#555;"><em>hasPlayer</em>: FB_Dominik_extra</td></tr><tr><td><code>Besiktas</code></td><td style="font-size:.83rem;color:#555;"><em>hasPlayer</em>: BJK_Radu_Dragusin</td></tr><tr><td><code>Trabzonspor</code></td><td style="font-size:.83rem;color:#555;"><em>hasPlayer</em>: TS_Okay_II</td></tr><tr><td><code>Konyaspor</code></td><td style="font-size:.83rem;color:#555;"><em>hasPlayer</em>: KNY_Vulic_extra</td></tr><tr><td><code>Samsunspor</code></td><td style="font-size:.83rem;color:#555;"><em>hasPlayer</em>: SAM_Baris_Yilmaz</td></tr><tr><td><code>Gaziantep FK</code></td><td style="font-size:.83rem;color:#555;"><em>isManagedBy</em>: Selcuk_Inan</td></tr><tr><td><code>Basaksehir FK</code></td><td style="font-size:.83rem;color:#555;"><em>hasPlayer</em>: BAS_Pierre_Webo</td></tr><tr><td><code>Kayserispor</code></td><td style="font-size:.83rem;color:#555;"><em>isManagedBy</em>: Recep_Ucar</td></tr><tr><td><code>Antalyaspor</code></td><td style="font-size:.83rem;color:#555;"><em>isManagedBy</em>: Nuri_Sahin</td></tr><tr><td><code>Hatayspor</code></td><td style="font-size:.83rem;color:#555;"><em>isManagedBy</em>: Omer_Erdogan</td></tr><tr><td><code>Caykur Rizespor</code></td><td style="font-size:.83rem;color:#555;"><em>isManagedBy</em>: Bulent_Uygun</td></tr><tr><td><code>Bursaspor</code></td><td style="font-size:.83rem;color:#555;"><em>hasPlayer</em>: BUR_Enzo_Ebosse</td></tr><tr><td><code>Kasimpasa</code></td><td style="font-size:.83rem;color:#555;"><em>hasHomeStadium</em>: Recep_Tayyip_Erdogan_Stadium</td></tr><tr><td><code>Alanyaspor</code></td><td style="font-size:.83rem;color:#555;"><em>hasHomeStadium</em>: Bahcesehir_Okullari_Stadium</td></tr><tr><td><code>Sivasspor</code></td><td style="font-size:.83rem;color:#555;"><em>hasHomeStadium</em>: Sivas_4_Eylul_Stadium</td></tr><tr><td><code>Ankaragucu</code></td><td style="font-size:.83rem;color:#555;"><em>isManagedBy</em>: Murat_Yakin</td></tr><tr><td><code>Goztepe</code></td><td style="font-size:.83rem;color:#555;"><em>hasHomeStadium</em>: Gursel_Aksel_Stadium</td></tr><tr><td><code>Eyupspor</code></td><td style="font-size:.83rem;color:#555;"><em>hasHomeStadium</em>: Halic_Stadium</td></tr></tbody></table></div>
+    </details>
+  </div>
+</section>
+
+<section class="entity-card" id="match">
+  <div class="card-head cls-head">
+    <span class="type-pill">Class</span>
+    <h3>Match</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">An individual competitive fixture between two Süper Lig teams. [Added v2]</p>
+    <table class="pt">
+      <tr><th>IRI</th><td><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Match</code></td></tr>
+      
+      <tr><th>Individuals</th><td><strong>343</strong></td></tr>
+    </table>
+    <details>
+      <summary>Browse 343 individual(s)</summary>
+      <div style="margin-top:.6rem;"><table style="width:100%;border-collapse:collapse;font-size:.88rem;"><thead><tr><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Individual</th><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Properties</th></tr></thead><tbody><tr><td><code>Galatasaray vs Fenerbahce 2025</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Galatasaray; <em>awayTeam</em>: Fenerbahce; <em>playedAt</em>: Rams_Park; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Fenerbahçe v Eyüpspor W1</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Fenerbahce; <em>awayTeam</em>: Eyupspor; <em>playedAt</em>: Sukru_Saracoglu_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Beşiktaş v Göztepe W1</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Besiktas; <em>awayTeam</em>: Goztepe; <em>playedAt</em>: Tupras_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Trabzonspor v Ankaragücü W1</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Trabzonspor; <em>awayTeam</em>: Ankaragucu; <em>playedAt</em>: Papara_Park; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Konyaspor v Sivasspor W1</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Konyaspor; <em>awayTeam</em>: Sivasspor; <em>playedAt</em>: Konya_Buyuksehir_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Samsunspor v Alanyaspor W1</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Samsunspor; <em>awayTeam</em>: Alanyaspor; <em>playedAt</em>: Samsun_19_Mayis_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Gaziantep FK v Kasımpaşa W1</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Gaziantep_FK; <em>awayTeam</em>: Kasimpasa; <em>playedAt</em>: Kalyon_Gaziantep_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Başakşehir FK v Bursaspor W1</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Basaksehir_FK; <em>awayTeam</em>: Bursaspor; <em>playedAt</em>: Ataturk_Olympic_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Kayserispor v Çaykur Rizespor W1</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Kayserispor; <em>awayTeam</em>: Caykur_Rizespor; <em>playedAt</em>: Kadir_Has_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Antalyaspor v Hatayspor W1</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Antalyaspor; <em>awayTeam</em>: Hatayspor; <em>playedAt</em>: Antalya_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Galatasaray v Eyüpspor W2</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Galatasaray; <em>awayTeam</em>: Eyupspor; <em>playedAt</em>: Rams_Park; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Fenerbahçe v Ankaragücü W2</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Fenerbahce; <em>awayTeam</em>: Ankaragucu; <em>playedAt</em>: Sukru_Saracoglu_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Beşiktaş v Sivasspor W2</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Besiktas; <em>awayTeam</em>: Sivasspor; <em>playedAt</em>: Tupras_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Trabzonspor v Alanyaspor W2</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Trabzonspor; <em>awayTeam</em>: Alanyaspor; <em>playedAt</em>: Papara_Park; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Konyaspor v Kasımpaşa W2</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Konyaspor; <em>awayTeam</em>: Kasimpasa; <em>playedAt</em>: Konya_Buyuksehir_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Samsunspor v Bursaspor W2</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Samsunspor; <em>awayTeam</em>: Bursaspor; <em>playedAt</em>: Samsun_19_Mayis_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Gaziantep FK v Çaykur Rizespor W2</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Gaziantep_FK; <em>awayTeam</em>: Caykur_Rizespor; <em>playedAt</em>: Kalyon_Gaziantep_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Başakşehir FK v Hatayspor W2</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Basaksehir_FK; <em>awayTeam</em>: Hatayspor; <em>playedAt</em>: Ataturk_Olympic_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Kayserispor v Antalyaspor W2</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Kayserispor; <em>awayTeam</em>: Antalyaspor; <em>playedAt</em>: Kadir_Has_Stadium; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td><code>Galatasaray v Göztepe W3</code></td><td style="font-size:.83rem;color:#555;"><em>homeTeam</em>: Galatasaray; <em>awayTeam</em>: Goztepe; <em>playedAt</em>: Rams_Park; <em>partOfSeason</em>: Superlig_Season_2025_26</td></tr><tr><td colspan="2" style="color:#888;font-style:italic;font-size:.83rem;">… and 323 more</td></tr></tbody></table></div>
+    </details>
+  </div>
+</section>
+
+<section class="entity-card" id="season">
+  <div class="card-head cls-head">
+    <span class="type-pill">Class</span>
+    <h3>Season</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Season</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">A Süper Lig football season (e.g., 2025-26). [Added v2]</p>
+    <table class="pt">
+      <tr><th>IRI</th><td><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Season</code></td></tr>
+      
+      <tr><th>Individuals</th><td><strong>1</strong></td></tr>
+    </table>
+    <details>
+      <summary>Browse 1 individual(s)</summary>
+      <div style="margin-top:.6rem;"><table style="width:100%;border-collapse:collapse;font-size:.88rem;"><thead><tr><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Individual</th><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Properties</th></tr></thead><tbody><tr><td><code>Superlig Season 2025-26</code></td><td style="font-size:.83rem;color:#555;"></td></tr></tbody></table></div>
+    </details>
+  </div>
+</section>
+
+<section class="entity-card" id="position">
+  <div class="card-head cls-head">
+    <span class="type-pill">Class</span>
+    <h3>Position</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">A playing position on a football pitch: Forward, Midfielder, Defender, or Goalkeeper. [Added v2]</p>
+    <table class="pt">
+      <tr><th>IRI</th><td><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#Position</code></td></tr>
+      
+      <tr><th>Individuals</th><td><strong>4</strong></td></tr>
+    </table>
+    <details>
+      <summary>Browse 4 individual(s)</summary>
+      <div style="margin-top:.6rem;"><table style="width:100%;border-collapse:collapse;font-size:.88rem;"><thead><tr><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Individual</th><th style="text-align:left;padding:4px 8px;background:#f5f5f5;border:1px solid #ddd;">Properties</th></tr></thead><tbody><tr><td><code>Forward</code></td><td style="font-size:.83rem;color:#555;"></td></tr><tr><td><code>Midfielder</code></td><td style="font-size:.83rem;color:#555;"></td></tr><tr><td><code>Defender</code></td><td style="font-size:.83rem;color:#555;"></td></tr><tr><td><code>Goalkeeper</code></td><td style="font-size:.83rem;color:#555;"></td></tr></tbody></table></div>
+    </details>
+  </div>
+</section>
+
+<h2 class="sec-title" id="objectproperties">Object Properties</h2>
+<p class="sec-desc">11 object properties relate individuals to each other (e.g. a Team <em>hasPlayer</em> a Player, a Match <em>officatedBy</em> a Referee).</p>
+
+<section class="entity-card" id="hashomestadium">
+  <div class="card-head op-head">
+    <span class="type-pill">Object Property</span>
+    <h3>hasHomeStadium</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeStadium</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Relates a Team to the Stadium it uses for home matches.</p>
+    <table class="pt">
+      <tr><th>Domain</th><td><a href="#team">Team</a></td></tr>
+      <tr><th>Range</th><td><a href="#stadium">Stadium</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="hasplayer">
+  <div class="card-head op-head">
+    <span class="type-pill">Object Property</span>
+    <h3>hasPlayer</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasPlayer</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Relates a Team to a Player currently contracted to it.</p>
+    <table class="pt">
+      <tr><th>Domain</th><td><a href="#team">Team</a></td></tr>
+      <tr><th>Range</th><td><a href="#player">Player</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="ismanagedby">
+  <div class="card-head op-head">
+    <span class="type-pill">Object Property</span>
+    <h3>isManagedBy</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#isManagedBy</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Relates a Team to its current head coach or manager.</p>
+    <table class="pt">
+      <tr><th>Domain</th><td><a href="#team">Team</a></td></tr>
+      <tr><th>Range</th><td><a href="#manager">Manager</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="locatedincity">
+  <div class="card-head op-head">
+    <span class="type-pill">Object Property</span>
+    <h3>locatedInCity</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#locatedInCity</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Relates a Team or Stadium to the City in which it is geographically situated.</p>
+    <table class="pt">
+      <tr><th>Domain</th><td><a href="#team,_stadium">Team, Stadium</a></td></tr>
+      <tr><th>Range</th><td><a href="#city">City</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="playsposition">
+  <div class="card-head op-head">
+    <span class="type-pill">Object Property</span>
+    <h3>playsPosition</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#playsPosition</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Relates a Player to their primary playing Position on the pitch. [Added v2]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td><a href="#player">Player</a></td></tr>
+      <tr><th>Range</th><td><a href="#position">Position</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="participatesin">
+  <div class="card-head op-head">
+    <span class="type-pill">Object Property</span>
+    <h3>participatesIn</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#participatesIn</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Relates a Team to a Match in which it takes part. [Added v2]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td><a href="#team">Team</a></td></tr>
+      <tr><th>Range</th><td><a href="#match">Match</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="hometeam">
+  <div class="card-head op-head">
+    <span class="type-pill">Object Property</span>
+    <h3>homeTeam</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#homeTeam</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Relates a Match to the Team playing as the home side. [Added v2]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td><a href="#match">Match</a></td></tr>
+      <tr><th>Range</th><td><a href="#team">Team</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="awayteam">
+  <div class="card-head op-head">
+    <span class="type-pill">Object Property</span>
+    <h3>awayTeam</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#awayTeam</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Relates a Match to the Team playing as the away side. [Added v2]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td><a href="#match">Match</a></td></tr>
+      <tr><th>Range</th><td><a href="#team">Team</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="playedat">
+  <div class="card-head op-head">
+    <span class="type-pill">Object Property</span>
+    <h3>playedAt</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#playedAt</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Relates a Match to the Stadium where it was played. [Added v2]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td><a href="#match">Match</a></td></tr>
+      <tr><th>Range</th><td><a href="#stadium">Stadium</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="partofseason">
+  <div class="card-head op-head">
+    <span class="type-pill">Object Property</span>
+    <h3>partOfSeason</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#partOfSeason</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Relates a Match to the Season it belongs to. [Added v2]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td><a href="#match">Match</a></td></tr>
+      <tr><th>Range</th><td><a href="#season">Season</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="officatedby">
+  <div class="card-head op-head">
+    <span class="type-pill">Object Property</span>
+    <h3>officatedBy</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#officatedBy</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Relates a Match to the Referee who officiated it. [Added v3]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td><a href="#match">Match</a></td></tr>
+      <tr><th>Range</th><td><a href="#referee">Referee</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<h2 class="sec-title" id="dataproperties">Data Properties</h2>
+<p class="sec-desc">13 datatype properties attach literal values to individuals (e.g. <em>hasAge</em>, <em>hasMatchDate</em>, <em>hasHomeScore</em>).</p>
+
+<section class="entity-card" id="hascapacity">
+  <div class="card-head dp-head">
+    <span class="type-pill">Data Property</span>
+    <h3>hasCapacity</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasCapacity</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">The official seating capacity of a Stadium. [Added v2]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td>Stadium</td></tr>
+      <tr><th>Range</th><td><code>xsd:integer</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="hasnationality">
+  <div class="card-head dp-head">
+    <span class="type-pill">Data Property</span>
+    <h3>hasNationality</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasNationality</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">The nationality of a Player or Manager. [Added v2]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td>Player, Manager</td></tr>
+      <tr><th>Range</th><td><code>xsd:string</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="hasage">
+  <div class="card-head dp-head">
+    <span class="type-pill">Data Property</span>
+    <h3>hasAge</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasAge</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">The age in years of a Player. [Added v2]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td>Player</td></tr>
+      <tr><th>Range</th><td><code>xsd:integer</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="hasjerseynumber">
+  <div class="card-head dp-head">
+    <span class="type-pill">Data Property</span>
+    <h3>hasJerseyNumber</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasJerseyNumber</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">The shirt number of a Player. [Added v2]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td>Player</td></tr>
+      <tr><th>Range</th><td><code>xsd:integer</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="hasfoundedyear">
+  <div class="card-head dp-head">
+    <span class="type-pill">Data Property</span>
+    <h3>hasFoundedYear</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasFoundedYear</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">The year in which a Team was officially founded. [Added v2]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td>Team</td></tr>
+      <tr><th>Range</th><td><code>xsd:integer</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="haslicenselevel">
+  <div class="card-head dp-head">
+    <span class="type-pill">Data Property</span>
+    <h3>hasLicenseLevel</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasLicenseLevel</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">The FIFA/TFF license level of a Referee. [Added v3]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td>Referee</td></tr>
+      <tr><th>Range</th><td><code>xsd:string</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="hasmatchdate">
+  <div class="card-head dp-head">
+    <span class="type-pill">Data Property</span>
+    <h3>hasMatchDate</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasMatchDate</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">The date of a Match in YYYY-MM-DD format. [Added v3]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td>Match</td></tr>
+      <tr><th>Range</th><td><code>xsd:string</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="hasmatchweek">
+  <div class="card-head dp-head">
+    <span class="type-pill">Data Property</span>
+    <h3>hasMatchweek</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasMatchweek</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">The matchweek number a Match belongs to. [Added v3]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td>Match</td></tr>
+      <tr><th>Range</th><td><code>xsd:integer</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="hashomescore">
+  <div class="card-head dp-head">
+    <span class="type-pill">Data Property</span>
+    <h3>hasHomeScore</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasHomeScore</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Goals scored by the home team. [Added v4]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td>Match</td></tr>
+      <tr><th>Range</th><td><code>xsd:integer</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="hasawayscore">
+  <div class="card-head dp-head">
+    <span class="type-pill">Data Property</span>
+    <h3>hasAwayScore</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasAwayScore</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Goals scored by the away team. [Added v4]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td>Match</td></tr>
+      <tr><th>Range</th><td><code>xsd:integer</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="hasmatchresult">
+  <div class="card-head dp-head">
+    <span class="type-pill">Data Property</span>
+    <h3>hasMatchResult</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasMatchResult</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Result: HomeWin, AwayWin, or Draw. [Added v4]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td>Match</td></tr>
+      <tr><th>Range</th><td><code>xsd:string</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="hasattendance">
+  <div class="card-head dp-head">
+    <span class="type-pill">Data Property</span>
+    <h3>hasAttendance</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasAttendance</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Spectator attendance at a Match. [Added v4]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td>Match</td></tr>
+      <tr><th>Range</th><td><code>xsd:integer</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="entity-card" id="hasmanagernationality">
+  <div class="card-head dp-head">
+    <span class="type-pill">Data Property</span>
+    <h3>hasManagerNationality</h3>
+    <div class="iri-line"><code>http://www.semanticweb.org/mehme/ontologies/2026/superlig#hasManagerNationality</code></div>
+  </div>
+  <div class="card-body">
+    <p class="desc">Alias kept for clarity; same as hasNationality for Manager. [Added v4]</p>
+    <table class="pt">
+      <tr><th>Domain</th><td>Manager</td></tr>
+      <tr><th>Range</th><td><code>xsd:string</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  Generated from <strong>superlig-ontology-protege-v4.owl</strong> &nbsp;·&nbsp;
+  Süper Lig Football Knowledge Ontology v4.0 &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp;
+  Documentation style inspired by <a href="https://github.com/dgarijo/Widoco" target="_blank">WIDOCO (Garijo 2017)</a>
+</footer>
+</main>
+</div>
+</body>
+</html>
