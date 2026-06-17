@@ -1,0 +1,60 @@
+# SHACL Validation Report — Süper Lig Knowledge Graph
+
+Validated with **pySHACL 0.31** (W3C SHACL Core + SPARQL-based constraints).
+
+Shapes file: `superlig-shapes.ttl` — 8 node shapes covering Player, Match, Team, Referee, Manager, Stadium, plus two semantic SPARQL constraints (distinct home/away teams, score-result consistency) and an ontology-wide label-presence check.
+
+
+## 1. Validation Against the Production Ontology (v5)
+
+- Graph size: **7889 triples**
+
+- Result: **CONFORMS = True**
+
+
+An earlier validation pass against v4 surfaced 94 violations: 82 matches whose `hasMatchResult` label disagreed with the recorded score, one legacy match individual (`Match_GS_FB_2025`) missing referee/date/week/score, and 7 legacy player individuals missing `hasAge`. All were corrected in v5 (see `fix_v4_to_v5.py`), and v5 now **conforms with zero violations**.
+
+
+## 2. Validation Demo — Intentionally Broken Data
+
+To demonstrate that the SHACL shapes actively catch errors, three synthetic individuals were added (`demo-broken-data.ttl`), each violating a different constraint type:
+
+
+| # | Individual | Violation type | Constraint |
+|---|---|---|---|
+| 1 | `Demo_InvalidJersey_Player` | Out-of-range value | `hasJerseyNumber = 150` (must be 1-99) |
+| 2 | `Demo_IncompleteMatch` | Missing required properties | no `officatedBy`, `hasMatchDate`, `hasMatchweek` |
+| 3 | `Demo_InconsistentResultMatch` | Semantic inconsistency (SPARQL constraint) | score 2-1 labeled `"Draw"` instead of `"HomeWin"` |
+
+- Graph size: **7915 triples**
+
+- Result: **CONFORMS = False**
+
+
+**5 violations detected**, exactly matching the 3 injected errors (the incomplete match triggers 3 separate property violations):
+
+
+| Focus Node | Violated Path | Message |
+|---|---|---|
+| `Demo_InvalidJersey_Player` | `hasJerseyNumber` | A player's jersey number must be an integer between 1 and 99. |
+| `Demo_IncompleteMatch` | `officatedBy` | A match must be officiated by exactly one Referee individual. |
+| `Demo_IncompleteMatch` | `hasMatchweek` | A match's matchweek must be an integer between 1 and 38. |
+| `Demo_IncompleteMatch` | `hasMatchDate` | hasMatchDate must be present and follow the YYYY-MM-DD format. |
+| `Demo_InconsistentResultMatch` | `—` | hasMatchResult value is inconsistent with hasHomeScore/hasAwayScore. |
+
+This confirms the shapes file correctly rejects malformed data while accepting well-formed data, satisfying both soundness (no false positives on v5) and completeness (catches all 3 injected error classes) for this constraint set.
+
+
+## 3. Shape Catalogue
+
+| Shape | Target | Constraints |
+|---|---|---|
+| `PlayerShape` | `:Player` | jersey 1-99, age 15-45, nationality present, position present |
+| `MatchShape` | `:Match` | exactly 1 home/away team, exactly 1 referee, week 1-38, non-negative scores, date pattern `YYYY-MM-DD` |
+| `MatchDistinctTeamsShape` | `:Match` | SPARQL — homeTeam ≠ awayTeam |
+| `TeamShape` | `:Team` | exactly 1 manager, exactly 1 stadium, ≥1 player |
+| `RefereeShape` | `:Referee` | nationality present, license level ∈ {FIFA, TFF} |
+| `ManagerShape` | `:Manager` | exactly 1 nationality |
+| `StadiumShape` | `:Stadium` | capacity ≥ 1000, exactly 1 city |
+| `MatchResultConsistencyShape` | `:Match` | SPARQL — `hasMatchResult` matches score arithmetic |
+| `LabelPresenceShape` | all core classes | every individual has `rdfs:label` |
